@@ -1,0 +1,1889 @@
+/* ========================================
+   MONTSERRAT
+======================================== */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap'
+);
+
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: max-content;
+    min-width: 100%;
+
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+    background: #eeeeee;
+
+    color: #222;
+
+    overflow: visible;
+}
+
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+
+/* ========================================
+   APLICAÇÃO
+======================================== */
+
+.aplicacao {
+    display: flex;
+
+    align-items: flex-start;
+
+    width: max-content;
+    min-width: 100%;
+
+    min-height: 100vh;
+}
+
+
+
+/* ========================================
+   PAINEL ADMINISTRATIVO
+======================================== */
+
+.painel {
+    flex: 0 0 390px;
+
+    width: 390px;
+
+    min-height: 100vh;
+
+    padding: 30px;
+
+    background: white;
+
+    border-right:
+        1px solid #dddddd;
+}
+
+
+.painel > h1 {
+    margin: 0;
+
+    color: #162b76;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+
+.subtitulo {
+    margin:
+        5px 0 30px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   NAVEGAÇÃO DE ANO
+======================================== */
+
+.navegacao-ano {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 22px 0 8px;
+}
+
+
+.ano-atual {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 90px;
+    min-height: 46px;
+
+    border:
+        1px solid #d9ddea;
+
+    border-radius: 7px;
+
+    background: #f7f8fc;
+
+    color: #162b76;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+
+.botao-ano {
+    width: 42px;
+    height: 46px;
+
+    padding: 0;
+
+    border:
+        1px solid #d9ddea;
+
+    border-radius: 7px;
+
+    background: white;
+
+    color: #162b76;
+
+    cursor: pointer;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+
+.botao-ano:hover:not(:disabled) {
+    background: #f1f3f9;
+}
+
+
+.botao-ano:disabled {
+    color: #c2c5ce;
+
+    background: #f5f5f5;
+
+    cursor: default;
+}
+
+
+.secao-painel {
+    margin-bottom: 35px;
+}
+
+
+.secao-painel > h2 {
+    margin:
+        0 0 12px;
+
+    color: #162b76;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.explicacao {
+    margin:
+        -5px 0 15px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+
+/* ========================================
+   FORMULÁRIO
+======================================== */
+
+.campo {
+    margin-bottom: 18px;
+}
+
+
+.campo label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #162b76;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.campo input,
+.campo select {
+    width: 100%;
+    height: 40px;
+
+    padding: 0 10px;
+
+    border:
+        1px solid #cccccc;
+
+    border-radius: 5px;
+
+    background: white;
+
+    outline: none;
+}
+
+
+.campo input:focus,
+.campo select:focus {
+    border-color: #162b76;
+}
+
+
+.linha-campos {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+}
+
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.botoes-formulario {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.botao {
+    min-height: 40px;
+
+    padding:
+        0 15px;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.botao-principal {
+    flex: 1;
+
+    background: #162b76;
+
+    color: white;
+}
+
+
+.botao-secundario {
+    background: #e8e8e8;
+
+    color: #333;
+}
+
+
+.botao-largura-total {
+    width: 100%;
+}
+
+
+.botao-planner {
+    width: 100%;
+
+    margin-top: 12px;
+
+    background: #0034C4;
+
+    color: white;
+}
+
+
+.oculto {
+    display: none;
+}
+
+
+
+/* ========================================
+   SELEÇÃO DE IMPRESSÃO DO PLANNER
+======================================== */
+
+.bloco-impressao-planner {
+    margin-top: 15px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid #eeeeee;
+}
+
+
+.titulo-impressao-planner {
+    margin-bottom: 10px;
+
+    color: #162b76;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.selecao-meses-planner {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        7px 12px;
+
+    margin-top: 10px;
+}
+
+
+.opcao-mes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    cursor: pointer;
+
+    color: #444;
+
+    font-size: 11px;
+}
+
+
+.opcao-mes input {
+    width: 15px;
+    height: 15px;
+
+    margin: 0;
+
+    accent-color: #0034C4;
+
+    cursor: pointer;
+}
+
+
+.opcao-todos {
+    padding-bottom: 9px;
+
+    border-bottom:
+        1px solid #eeeeee;
+
+    color: #162b76;
+
+    font-weight: 700;
+}
+
+
+
+/* ========================================
+   DIAS LETIVOS - PAINEL
+======================================== */
+
+.campos-dias-letivos {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+}
+
+
+.campo-dia-letivo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8px;
+
+    padding:
+        7px 8px;
+
+    border:
+        1px solid #eeeeee;
+
+    border-radius: 5px;
+}
+
+
+.campo-dia-letivo label {
+    color: #444;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.campo-dia-letivo input {
+    width: 48px;
+    height: 28px;
+
+    padding:
+        0 5px;
+
+    border:
+        1px solid #cccccc;
+
+    border-radius: 4px;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    outline: none;
+}
+
+
+
+/* ========================================
+   GERENCIAMENTO DE EVENTOS
+======================================== */
+
+.item-gerenciamento {
+    padding:
+        10px 0;
+
+    border-bottom:
+        1px solid #eeeeee;
+}
+
+
+.cabecalho-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.indicador-cor {
+    width: 10px;
+    height: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 3px;
+}
+
+
+.nome-gerenciamento {
+    flex: 1;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.datas-gerenciamento {
+    margin:
+        5px 0 7px 17px;
+
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+.acoes-evento {
+    margin-left: 17px;
+
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.botao-acao {
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #162b76;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.botao-excluir {
+    color: #c62828;
+}
+
+
+.sem-eventos {
+    color: #888;
+
+    font-size: 11px;
+}
+
+
+
+/* ========================================
+   ÁREA DE PRÉVIA
+======================================== */
+
+.area-preview {
+    flex:
+        0 0
+        calc(420mm + 60px);
+
+    width:
+        calc(420mm + 60px);
+
+    min-width:
+        calc(420mm + 60px);
+
+    padding: 30px;
+
+    overflow: visible;
+}
+
+
+.parte-projeto {
+    margin-bottom: 55px;
+}
+
+
+.titulo-preview {
+    margin-bottom: 15px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+
+/* ========================================
+   PARTE 1
+   CALENDÁRIO GERAL
+======================================== */
+
+#parte-calendario {
+    width: 297mm;
+
+    min-width: 297mm;
+
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+
+/* ========================================
+   PÁGINA A3 RETRATO
+======================================== */
+
+.pagina-a3 {
+    position: relative;
+
+    width: 297mm;
+    height: 420mm;
+
+    margin:
+        0 0 30px 0;
+
+    background: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 2px 12px
+        rgba(0, 0, 0, 0.15);
+
+    page: calendario-retrato;
+}
+
+
+
+/* ========================================
+   FAIXA SUPERIOR
+======================================== */
+
+.faixa-superior {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 18mm;
+
+    padding:
+        0 12mm;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #0034C4;
+
+    color: white;
+
+    z-index: 200;
+}
+
+
+
+/* ========================================
+   TÍTULO CALENDÁRIO
+======================================== */
+
+.titulo-calendario {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 3mm;
+
+    color: white;
+
+    white-space: nowrap;
+}
+
+
+.texto-calendario {
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 22pt;
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+
+.texto-ano {
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 22pt;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+.texto-semestre {
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 20pt;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+
+/* ========================================
+   FAIXA INFERIOR
+======================================== */
+
+.faixa-inferior {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 18mm;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #0034C4;
+
+    overflow: hidden;
+
+    z-index: 200;
+}
+
+
+.logo-panorama {
+    display: block;
+
+    width: auto;
+
+    height: 11mm;
+
+    max-width: 75mm;
+
+    object-fit: contain;
+}
+
+
+
+/* ========================================
+   ÁREA ÚTIL
+======================================== */
+
+.area-util {
+    position: absolute;
+
+    top: 18mm;
+    bottom: 18mm;
+
+    left: 0;
+    right: 0;
+
+    padding:
+        8mm 12mm;
+
+    overflow: hidden;
+}
+
+
+
+/* ========================================
+   GRADE DOS MESES
+======================================== */
+
+.grade-meses {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    grid-template-rows:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    column-gap: 7mm;
+
+    row-gap: 5mm;
+
+    align-items: stretch;
+}
+
+
+
+/* ========================================
+   MÊS
+======================================== */
+
+.mes {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+.mes h3 {
+    flex: 0 0 auto;
+
+    margin:
+        0 0 2mm;
+
+    text-align: center;
+
+    color: #162b76;
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+
+
+/* ========================================
+   DIAS DA SEMANA
+======================================== */
+
+.dias-semana {
+    flex: 0 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    padding-bottom: 1.3mm;
+
+    border-bottom:
+        0.6mm solid #162b76;
+
+    color: #162b76;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+
+/* ========================================
+   CALENDÁRIO
+======================================== */
+
+.calendario {
+    flex: 0 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    grid-template-rows:
+        repeat(6, 24px);
+
+    row-gap: 2mm;
+
+    margin-top: 2mm;
+}
+
+
+
+/* ========================================
+   DIA
+======================================== */
+
+.dia {
+    position: relative;
+
+    height: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: visible;
+}
+
+
+.celula-vazia {
+    height: 24px;
+}
+
+
+
+/* ========================================
+   NÚMERO DO DIA
+======================================== */
+
+.numero-dia {
+    position: relative;
+
+    z-index: 100;
+
+    color: #162b76;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+.numero-com-evento {
+    color: white;
+}
+
+
+
+/* ========================================
+   CAMADAS DE EVENTOS
+======================================== */
+
+.camada-evento {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    height:
+        calc(
+            24px + var(--aumento)
+        );
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+
+/* ========================================
+   EVENTO ÚNICO
+======================================== */
+
+.camada-unica {
+    width:
+        calc(
+            100% - 4px +
+            var(--aumento)
+        );
+
+    border-radius: 4px;
+}
+
+
+
+/* ========================================
+   EVENTO CONTÍNUO
+======================================== */
+
+.camada-inicio {
+    width:
+        calc(
+            100% +
+            var(--aumento) +
+            1px
+        );
+
+    left:
+        calc(50% + 0.5px);
+
+    border-radius:
+        5px 0 0 5px;
+}
+
+
+.camada-conecta-esquerda {
+    width:
+        calc(
+            100% +
+            var(--aumento) +
+            2px
+        );
+
+    border-radius: 0;
+}
+
+
+.camada-conecta-direita {
+    width:
+        calc(
+            100% +
+            var(--aumento) +
+            2px
+        );
+}
+
+
+.camada-fim {
+    width:
+        calc(
+            100% +
+            var(--aumento) +
+            1px
+        );
+
+    left:
+        calc(50% - 0.5px);
+
+    border-radius:
+        0 5px 5px 0;
+}
+
+
+.camada-inicio.camada-fim {
+    width:
+        calc(
+            100% - 4px +
+            var(--aumento)
+        );
+
+    left: 50%;
+
+    border-radius: 4px;
+}
+
+
+
+/* ========================================
+   DIAS LETIVOS
+======================================== */
+
+.dias-letivos {
+    flex: 0 0 auto;
+
+    height: 6mm;
+
+    margin-top: 2mm;
+
+    padding-bottom: 1mm;
+
+    border-bottom:
+        0.6mm solid #172a75;
+
+    text-align: right;
+
+    color: #333;
+
+    font-size: 7pt;
+
+    font-weight: 600;
+}
+
+
+
+/* ========================================
+   LISTA DE EVENTOS
+======================================== */
+
+.lista-eventos {
+    flex: 1;
+
+    min-height: 0;
+
+    margin-top: 2mm;
+
+    overflow: hidden;
+
+    font-size: 9pt;
+}
+
+
+.item-evento {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.2mm;
+
+    min-height: 5mm;
+
+    margin-bottom: 1.2mm;
+
+    font-size: inherit;
+
+    line-height: 1.15;
+}
+
+
+.data-evento {
+    flex: 0 0 auto;
+
+    min-width: 7mm;
+
+    padding:
+        0.8mm 1.3mm;
+
+    border-radius: 1mm;
+
+    color: white;
+
+    font-size: inherit;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+.descricao-evento {
+    flex: 1 1 0;
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    font-size: inherit;
+
+    line-height: 1.15;
+
+    white-space: normal;
+
+    overflow-wrap: break-word;
+
+    word-break: normal;
+}
+
+
+
+/* ========================================
+   PARTE 2
+   PLANNER
+======================================== */
+
+.parte-planner {
+    width: 420mm;
+
+    min-width: 420mm;
+
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+.titulo-preview-planner {
+    margin-top: 40px;
+}
+
+
+
+/* ========================================
+   CONTAINER DO PLANNER
+======================================== */
+
+.scroll-planner {
+    width: 420mm;
+
+    min-width: 420mm;
+
+    overflow: visible;
+
+    padding: 0;
+}
+
+
+.planner-mensal {
+    width: 420mm;
+
+    min-width: 420mm;
+}
+
+
+
+/* ========================================
+   PÁGINA A3 PAISAGEM
+======================================== */
+
+.pagina-planner {
+    position: relative;
+
+    width: 420mm;
+    min-width: 420mm;
+
+    height: 297mm;
+
+    margin:
+        0 0 30px;
+
+    background: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 2px 12px
+        rgba(0, 0, 0, 0.15);
+
+    page: planner-paisagem;
+}
+
+
+
+/* ========================================
+   CABEÇALHO DO PLANNER
+======================================== */
+
+.planner-cabecalho {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 18mm;
+
+    display: grid;
+
+    grid-template-columns:
+        95mm 1fr 95mm;
+
+    align-items: center;
+
+    padding:
+        0 10mm;
+
+    background: #0034C4;
+
+    color: white;
+}
+
+
+
+/* ========================================
+   LOGO DO PLANNER
+======================================== */
+
+.planner-logo-area {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    height: 100%;
+}
+
+
+.planner-logo {
+    display: block;
+
+    width: auto;
+
+    height: 13mm;
+
+    max-width: 82mm;
+
+    object-fit: contain;
+}
+
+
+
+/* ========================================
+   TÍTULO DO PLANNER
+======================================== */
+
+.planner-titulo {
+    text-align: center;
+
+    color: white;
+
+    font-size: 22pt;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+.planner-titulo strong {
+    font-weight: 900;
+}
+
+
+
+/* ========================================
+   CONTEÚDO DO PLANNER
+======================================== */
+
+.planner-conteudo {
+    position: absolute;
+
+    top: 18mm;
+    bottom: 0;
+
+    left: 0;
+    right: 0;
+
+    padding:
+        7mm 10mm 8mm;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+
+/* ========================================
+   CABEÇALHO DOS DIAS
+======================================== */
+
+.planner-dias-semana {
+    flex: 0 0 9mm;
+
+    display: grid;
+
+    grid-template-columns:
+        12mm repeat(7, 1fr);
+
+    border:
+        0.35mm solid #cfd3da;
+
+    border-bottom: 0;
+
+    background: #f4f5f7;
+}
+
+
+.planner-cabecalho-semana,
+.planner-dia-semana {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    border-right:
+        0.35mm solid #cfd3da;
+
+    color: #162b76;
+
+    font-size: 9pt;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+.planner-dia-semana:last-child {
+    border-right: 0;
+}
+
+
+.planner-cabecalho-semana {
+    font-size: 6.5pt;
+
+    line-height: 1.1;
+
+    text-align: center;
+}
+
+
+
+/* ========================================
+   GRADE DO PLANNER
+======================================== */
+
+.planner-grade {
+    flex: 1;
+
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        12mm repeat(7, 1fr);
+
+    border-left:
+        0.35mm solid #cfd3da;
+
+    border-top:
+        0.35mm solid #cfd3da;
+}
+
+
+
+/* ========================================
+   NÚMERO DA SEMANA
+======================================== */
+
+.planner-numero-semana {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-right:
+        0.35mm solid #cfd3da;
+
+    border-bottom:
+        0.35mm solid #cfd3da;
+
+    background: #f7f7f7;
+
+    color: #777;
+
+    font-size: 8pt;
+
+    font-weight: 700;
+}
+
+
+
+/* ========================================
+   DIA DO PLANNER
+======================================== */
+
+.planner-dia {
+    position: relative;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding:
+        4mm 3mm 2.5mm;
+
+    border-right:
+        0.35mm solid #cfd3da;
+
+    border-bottom:
+        0.35mm solid #cfd3da;
+
+    background: white;
+
+    overflow: hidden;
+}
+
+
+
+/* ========================================
+   DIA FORA DO MÊS
+======================================== */
+
+.planner-dia-fora {
+    background: #fafafa;
+}
+
+
+
+/* ========================================
+   FIM DE SEMANA
+======================================== */
+
+.planner-fim-semana:not(
+    .planner-dia-fora
+) {
+    background: #f8f8f8;
+}
+
+
+
+/* ========================================
+   NÚMERO DO DIA
+======================================== */
+
+.planner-numero-dia {
+    position: absolute;
+
+    top: 1.7mm;
+    left: 2mm;
+
+    color: #162b76;
+
+    font-size: 9pt;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+
+/* ========================================
+   EVENTOS DO PLANNER
+======================================== */
+
+.planner-eventos-dia {
+    width: 100%;
+    height: 100%;
+
+    padding-top: 3mm;
+
+    overflow: hidden;
+}
+
+
+.planner-evento {
+    position: relative;
+    padding-left: 4mm;
+    margin-bottom: 2.5mm;
+    color: #222;
+    font-size: 10pt;
+    font-weight: 500;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+
+/* ========================================
+   BOLINHA ANTES DE CADA EVENTO
+======================================== */
+
+.planner-evento::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0.5mm;
+    top: 1.25mm;
+
+    width: 1.8mm;
+    height: 1.8mm;
+
+    border-radius: 50%;
+
+    background: #162b76;
+}
+
+
+
+/* ========================================
+   DIAS LETIVOS DO PLANNER
+======================================== */
+
+.planner-rodape {
+    flex: 0 0 9mm;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: flex-end;
+
+    padding-top: 2mm;
+
+    color: #162b76;
+
+    font-size: 9pt;
+
+    font-weight: 700;
+}
+
+
+
+/* ========================================
+   PÁGINAS DE IMPRESSÃO
+======================================== */
+
+@page calendario-retrato {
+
+    size:
+        A3 portrait;
+
+    margin: 0;
+}
+
+
+@page planner-paisagem {
+
+    size:
+        A3 landscape;
+
+    margin: 0;
+}
+
+
+
+/* ========================================
+   IMPRESSÃO
+======================================== */
+
+@media print {
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+
+        width: auto;
+        min-width: 0;
+
+        background: white;
+
+        overflow: visible;
+    }
+
+
+    .aplicacao {
+        display: block;
+
+        width: auto;
+        min-width: 0;
+
+        min-height: 0;
+    }
+
+
+    .painel,
+    .titulo-preview {
+        display: none !important;
+    }
+
+
+    .area-preview {
+        display: block;
+
+        width: auto;
+        min-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        overflow: visible;
+    }
+
+
+    #parte-calendario,
+    .parte-planner,
+    .scroll-planner,
+    .planner-mensal {
+        width: auto;
+
+        min-width: 0;
+
+        margin: 0;
+
+        overflow: visible;
+
+        padding: 0;
+    }
+
+
+    * {
+        -webkit-print-color-adjust:
+            exact;
+
+        print-color-adjust:
+            exact;
+    }
+
+
+
+    /* ====================================
+       IMPRIMIR CALENDÁRIO GERAL
+    ==================================== */
+
+    body.imprimir-calendario
+    #parte-planner {
+        display:
+            none !important;
+    }
+
+
+    body.imprimir-calendario
+    #parte-calendario {
+        display:
+            block !important;
+    }
+
+
+    body.imprimir-calendario
+    .pagina-a3 {
+        width: 297mm;
+        height: 420mm;
+
+        margin: 0;
+
+        box-shadow: none;
+
+        overflow: hidden;
+
+        break-after: page;
+
+        page-break-after:
+            always;
+    }
+
+
+    body.imprimir-calendario
+    .pagina-a3:last-child {
+        break-after: auto;
+
+        page-break-after:
+            auto;
+    }
+
+
+
+    /* ====================================
+       IMPRIMIR PLANNER
+    ==================================== */
+
+    body.imprimir-planner
+    #parte-calendario {
+        display:
+            none !important;
+    }
+
+
+    body.imprimir-planner
+    #parte-planner {
+        display:
+            block !important;
+    }
+
+
+    body.imprimir-planner
+    .pagina-planner.nao-imprimir {
+        display:
+            none !important;
+    }
+
+
+    body.imprimir-planner
+    .pagina-planner {
+        width: 420mm;
+        min-width: 420mm;
+
+        height: 297mm;
+
+        margin: 0;
+
+        box-shadow: none;
+
+        overflow: hidden;
+
+        break-after: page;
+
+        page-break-after:
+            always;
+    }
+
+
+    body.imprimir-planner
+    .pagina-planner.ultima-pagina-impressao {
+        break-after: auto;
+
+        page-break-after:
+            auto;
+    }
+
+}
+
+/* ========================================
+   AÇÕES DO MÊS
+======================================== */
+.opcao-acao-mes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    color: #444;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.opcao-acao-mes input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: #f2c500;
+    cursor: pointer;
+}
+
+/* ========================================
+   SETEMBRO AMARELO - CALENDÁRIO GERAL
+======================================== */
+.calendario-setembro-amarelo {
+    position: relative;
+}
+
+.calendario-setembro-amarelo::after {
+    content: "";
+
+    position: absolute;
+
+    top: -2mm;
+    right: -0mm;
+    bottom: 3mm;
+    left: -0mm;
+
+    border: 1.5mm solid #f2c500;
+    border-radius: 2mm;
+
+    pointer-events: none;
+
+    z-index: 150;
+}
+
+.data-setembro-amarelo {
+    background: #f2c500 !important;
+    color: #162b76;
+}
+
+/* ========================================
+   SETEMBRO AMARELO - PLANNER
+======================================== */
+.planner-setembro-amarelo {
+    margin-right: auto;
+    color: #b18c00;
+    font-size: 9pt;
+    font-weight: 700;
+}

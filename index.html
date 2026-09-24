@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Calendário Escolar 2027</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <div class="aplicacao">
+
+        <!-- =====================================
+             PAINEL ADMINISTRATIVO
+        ====================================== -->
+
+        <aside class="painel">
+
+            <h1>Calendário Escolar</h1>
+
+            <div class="navegacao-ano">
+                <button
+                    type="button"
+                    id="ano-anterior"
+                    class="botao-ano"
+                    aria-label="Ano anterior"
+                >
+                    &#8249;
+                </button>
+
+                <div
+                    id="ano-atual"
+                    class="ano-atual"
+                >
+                    2027
+                </div>
+
+                <button
+                    type="button"
+                    id="proximo-ano"
+                    class="botao-ano"
+                    aria-label="Próximo ano"
+                >
+                    &#8250;
+                </button>
+            </div>
+
+            <p class="subtitulo">
+                Gerenciamento do calendário <span id="ano-subtitulo">2027</span>
+            </p>
+
+
+            <!-- =================================
+                 IMPRESSÃO
+            ================================== -->
+
+            <section class="secao-painel">
+
+                <h2>Impressão</h2>
+
+
+                <button
+                    type="button"
+                    id="imprimir-calendario"
+                    class="botao botao-principal botao-largura-total"
+                >
+                    Imprimir Calendário Geral
+                </button>
+
+
+                <!-- =============================
+                     PLANNER
+                ============================== -->
+
+                <div class="bloco-impressao-planner">
+
+                    <div class="titulo-impressao-planner">
+                        Planner Mensal
+                    </div>
+
+
+                    <!-- MARCAR TODOS -->
+
+                    <label class="opcao-mes opcao-todos">
+
+                        <input
+                            type="checkbox"
+                            id="selecionar-todos-meses"
+                            checked
+                        >
+
+                        <span>
+                            Selecionar todos os meses
+                        </span>
+
+                    </label>
+
+
+                    <!-- MESES -->
+
+                    <div
+                        id="selecao-meses-planner"
+                        class="selecao-meses-planner"
+                    >
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="0"
+                                checked
+                            >
+
+                            <span>Janeiro</span>
+
+                        </label>
+
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="1"
+                                checked
+                            >
+
+                            <span>Fevereiro</span>
+
+                        </label>
+
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="2"
+                                checked
+                            >
+
+                            <span>Março</span>
+
+                        </label>
+
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="3"
+                                checked
+                            >
+
+                            <span>Abril</span>
+
+                        </label>
+
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="4"
+                                checked
+                            >
+
+                            <span>Maio</span>
+
+                        </label>
+
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="5"
+                                checked
+                            >
+
+                            <span>Junho</span>
+
+                        </label>
+
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="6"
+                                checked
+                            >
+
+                            <span>Julho</span>
+
+                        </label>
+
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="7"
+                                checked
+                            >
+
+                            <span>Agosto</span>
+
+                        </label>
+
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="8"
+                                checked
+                            >
+
+                            <span>Setembro</span>
+
+                        </label>
+
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="9"
+                                checked
+                            >
+
+                            <span>Outubro</span>
+
+                        </label>
+
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="10"
+                                checked
+                            >
+
+                            <span>Novembro</span>
+
+                        </label>
+
+
+                        <label class="opcao-mes">
+
+                            <input
+                                type="checkbox"
+                                class="checkbox-mes-planner"
+                                value="11"
+                                checked
+                            >
+
+                            <span>Dezembro</span>
+
+                        </label>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="imprimir-planner"
+                        class="botao botao-planner"
+                    >
+                        Imprimir Planner Selecionado
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 CADASTRO DE EVENTOS
+            ================================== -->
+
+            <section class="secao-painel">
+
+                <h2>Novo evento</h2>
+
+                <form id="form-evento">
+
+                    <input
+                        type="hidden"
+                        id="evento-id"
+                    >
+
+
+                    <div class="campo">
+
+                        <label for="nome">
+                            Nome do evento
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Ex.: Semana Pedagógica"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="linha-campos">
+
+                        <div class="campo">
+
+                            <label for="inicio">
+                                Data inicial
+                            </label>
+
+                            <input
+                                type="date"
+                                id="inicio"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="fim">
+                                Data final
+                            </label>
+
+                            <input
+                                type="date"
+                                id="fim"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="tipo">
+                            Categoria
+                        </label>
+
+                        <select
+                            id="tipo"
+                            required
+                        >
+
+                            <option value="evento">
+                                Eventos Pedagógicos
+                            </option>
+
+                            <option value="pedagogico">
+                                Início / Fim Pedagógico
+                            </option>
+
+                            <option value="vermelho">
+                                Reuniões
+                            </option>
+
+                            <option value="avaliacao">
+                                Avaliações / Simulados
+                            </option>
+
+                            <option value="feriado">
+                                Feriados
+                            </option>
+
+                            <option value="viagem">
+                                Desbravando Caminhos / Viagens
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="botoes-formulario">
+
+                        <button
+                            type="submit"
+                            id="botao-salvar"
+                            class="botao botao-principal"
+                        >
+                            Adicionar evento
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="botao-cancelar"
+                            class="botao botao-secundario oculto"
+                        >
+                            Cancelar edição
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- =================================
+                 AÇÕES DO MÊS
+            ================================== -->
+            <section class="secao-painel">
+                <h2>Ações do mês</h2>
+                <label class="opcao-acao-mes">
+                    <input type="checkbox" id="setembro-amarelo">
+                    <span>Setembro Amarelo</span>
+                </label>
+            </section>
+
+            <!-- =================================
+                 DIAS LETIVOS
+            ================================== -->
+
+            <section class="secao-painel">
+
+                <h2>Dias letivos</h2>
+
+                <p class="explicacao">
+                    Informe manualmente a quantidade
+                    de dias letivos de cada mês.
+                </p>
+
+                <div
+                    id="campos-dias-letivos"
+                    class="campos-dias-letivos"
+                ></div>
+
+            </section>
+
+
+            <!-- =================================
+                 EVENTOS CADASTRADOS
+            ================================== -->
+
+            <section class="secao-painel">
+
+                <h2>Eventos cadastrados</h2>
+
+                <div id="lista-gerenciamento"></div>
+
+            </section>
+
+        </aside>
+
+
+        <!-- =====================================
+             ÁREA DE PRÉVIA
+        ====================================== -->
+
+        <main class="area-preview">
+
+
+            <!-- =================================
+                 PARTE 1
+            ================================== -->
+
+            <section
+                id="parte-calendario"
+                class="parte-projeto"
+            >
+
+                <div class="titulo-preview">
+                    Calendário Geral — A3 Retrato
+                </div>
+
+
+                <!-- PRIMEIRO SEMESTRE -->
+
+                <section class="pagina-a3">
+
+                    <header class="faixa-superior">
+
+                        <div class="titulo-calendario">
+
+                            <span class="texto-calendario">
+                                Calendário
+                            </span>
+
+                            <span class="texto-ano">
+                                2027
+                            </span>
+
+                        </div>
+
+
+                        <div class="texto-semestre">
+                            1º Semestre
+                        </div>
+
+                    </header>
+
+
+                    <div class="area-util">
+
+                        <div
+                            id="semestre-1"
+                            class="grade-meses"
+                        ></div>
+
+                    </div>
+
+
+                    <footer class="faixa-inferior">
+
+                        <img
+                            src="logo-panorama.png"
+                            alt="Colégio Panorama"
+                            class="logo-panorama"
+                        >
+
+                    </footer>
+
+                </section>
+
+
+                <!-- SEGUNDO SEMESTRE -->
+
+                <section class="pagina-a3">
+
+                    <header class="faixa-superior">
+
+                        <div class="titulo-calendario">
+
+                            <span class="texto-calendario">
+                                Calendário
+                            </span>
+
+                            <span class="texto-ano">
+                                2027
+                            </span>
+
+                        </div>
+
+
+                        <div class="texto-semestre">
+                            2º Semestre
+                        </div>
+
+                    </header>
+
+
+                    <div class="area-util">
+
+                        <div
+                            id="semestre-2"
+                            class="grade-meses"
+                        ></div>
+
+                    </div>
+
+
+                    <footer class="faixa-inferior">
+
+                        <img
+                            src="logo-panorama.png"
+                            alt="Colégio Panorama"
+                            class="logo-panorama"
+                        >
+
+                    </footer>
+
+                </section>
+
+            </section>
+
+
+            <!-- =================================
+                 PARTE 2
+            ================================== -->
+
+            <section
+                id="parte-planner"
+                class="parte-projeto parte-planner"
+            >
+
+                <div class="titulo-preview titulo-preview-planner">
+                    Planner Mensal — A3 Paisagem
+                </div>
+
+
+                <!--
+                    Este container tem largura própria.
+                    A rolagem horizontal fica no
+                    .scroll-planner.
+                -->
+
+                <div class="scroll-planner">
+
+                    <div
+                        id="planner-mensal"
+                        class="planner-mensal"
+                    ></div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
