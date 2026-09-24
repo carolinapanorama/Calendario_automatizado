@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar — Calendário Escolar</title>
+
+    <style>
+        @import url(
+            'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap'
+        );
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 24px;
+
+            font-family: "Montserrat", Arial, sans-serif;
+            background: #eeeeee;
+            color: #222;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+
+        /* ========================================
+           CARTÃO
+        ======================================== */
+
+        .cartao-login {
+            width: 100%;
+            max-width: 400px;
+
+            overflow: hidden;
+
+            background: white;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Faixa azul igual ao topo do calendário */
+
+        .faixa-logo {
+            height: 18mm;
+            min-height: 68px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #0034C4;
+        }
+
+        .logo-panorama {
+            display: block;
+            height: 11mm;
+            min-height: 40px;
+            max-width: 75mm;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .conteudo-login {
+            padding: 30px;
+        }
+
+        .conteudo-login h1 {
+            margin: 0;
+
+            color: #162b76;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .subtitulo {
+            margin: 5px 0 28px;
+
+            color: #777;
+            font-size: 13px;
+        }
+
+
+        /* ========================================
+           FORMULÁRIO
+        ======================================== */
+
+        .campo {
+            margin-bottom: 18px;
+        }
+
+        .campo label {
+            display: block;
+            margin-bottom: 6px;
+
+            color: #162b76;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .campo input {
+            width: 100%;
+            height: 40px;
+
+            padding: 0 10px;
+
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            background: white;
+
+            outline: none;
+        }
+
+        .campo input:focus {
+            border-color: #162b76;
+            box-shadow: 0 0 0 3px rgba(22, 43, 118, 0.15);
+        }
+
+        .campo input.invalido {
+            border-color: #c62828;
+        }
+
+
+        /* ========================================
+           BOTÃO E ERRO
+        ======================================== */
+
+        .botao {
+            width: 100%;
+            min-height: 42px;
+
+            padding: 0 15px;
+
+            border: 0;
+            border-radius: 5px;
+
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .botao-principal {
+            background: #162b76;
+            color: white;
+        }
+
+        .botao-principal:hover {
+            background: #0034C4;
+        }
+
+        .botao:focus-visible {
+            outline: 3px solid rgba(0, 52, 196, 0.35);
+            outline-offset: 2px;
+        }
+
+        .mensagem-erro {
+            margin: -4px 0 14px;
+
+            color: #c62828;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="cartao-login">
+
+        <header class="faixa-logo">
+            <img
+                src="logo-panorama.png"
+                alt="Colégio Panorama"
+                class="logo-panorama"
+            >
+        </header>
+
+        <div class="conteudo-login">
+
+            <h1>Calendário Escolar</h1>
+
+            <p class="subtitulo">
+                Entre para gerenciar o calendário.
+            </p>
+
+            <form id="form-login" novalidate>
+
+                <div class="campo">
+                    <label for="usuario">Usuário</label>
+                    <input
+                        type="text"
+                        id="usuario"
+                        autocomplete="username"
+                        autocapitalize="none"
+                        spellcheck="false"
+                        required
+                        autofocus
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <p
+                    id="mensagem-erro"
+                    class="mensagem-erro oculto"
+                    role="alert"
+                ></p>
+
+                <button
+                    type="submit"
+                    class="botao botao-principal"
+                >
+                    Entrar
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+    <script>
+        // ========================================
+        // CREDENCIAIS (provisório)
+        // ========================================
+
+        const USUARIO_ADMIN = "admin";
+        const SENHA_ADMIN = "admin";
+
+
+        // ========================================
+        // ELEMENTOS
+        // ========================================
+
+        const formLogin = document.getElementById("form-login");
+        const campoUsuario = document.getElementById("usuario");
+        const campoSenha = document.getElementById("senha");
+        const mensagemErro = document.getElementById("mensagem-erro");
+
+
+        // ========================================
+        // JÁ ESTÁ LOGADO
+        // ========================================
+
+        if (sessionStorage.getItem("logado") === "true") {
+            location.replace("index.html");
+        }
+
+
+        // ========================================
+        // ENVIO DO FORMULÁRIO
+        // ========================================
+
+        formLogin.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const usuario = campoUsuario.value.trim();
+            const senha = campoSenha.value;
+
+            limparErro();
+
+            if (!usuario || !senha) {
+                mostrarErro("Preencha usuário e senha.");
+                return;
+            }
+
+            if (usuario === USUARIO_ADMIN && senha === SENHA_ADMIN) {
+                sessionStorage.setItem("logado", "true");
+                location.replace("index.html");
+                return;
+            }
+
+            mostrarErro("Usuário ou senha incorretos. Confira e tente de novo.");
+            campoSenha.value = "";
+            campoSenha.focus();
+
+        });
+
+
+        // ========================================
+        // MENSAGENS
+        // ========================================
+
+        function mostrarErro(texto) {
+            mensagemErro.textContent = texto;
+            mensagemErro.classList.remove("oculto");
+            campoUsuario.classList.add("invalido");
+            campoSenha.classList.add("invalido");
+        }
+
+        function limparErro() {
+            mensagemErro.textContent = "";
+            mensagemErro.classList.add("oculto");
+            campoUsuario.classList.remove("invalido");
+            campoSenha.classList.remove("invalido");
+        }
+
+        [campoUsuario, campoSenha].forEach(function (campo) {
+            campo.addEventListener("input", limparErro);
+        });
+    </script>
+
+</body>
+
+</html>

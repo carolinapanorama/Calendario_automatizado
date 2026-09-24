@@ -3654,3 +3654,8 @@ function salvarSetembroAmarelo() {
         String(setembroAmarelo)
     );
 }
+
+document.getElementById("sair").addEventListener("click", function () {
+    sessionStorage.removeItem("logado");
+    location.replace("login.html");
+});

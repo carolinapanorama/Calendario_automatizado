@@ -11,6 +11,12 @@
 
     <title>Calendário Escolar 2027</title>
 
+    <script>
+    if (sessionStorage.getItem("logado") !== "true") {
+        location.replace("login.html");
+    }
+    </script>
+
     <link
         rel="stylesheet"
         href="style.css"
@@ -59,7 +65,14 @@
             <p class="subtitulo">
                 Gerenciamento do calendário <span id="ano-subtitulo">2027</span>
             </p>
-
+            <button
+                type="button"
+                id="sair"
+                class="botao botao-secundario botao-largura-total"
+                style="margin-bottom: 30px;"
+            >
+                Sair
+            </button>
 
             <!-- =================================
                  IMPRESSÃO
